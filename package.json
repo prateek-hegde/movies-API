@@ -4,19 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "link-module-alias"
+    "start": "node app.js"
   },
   "engines": {
     "node": "10.3.0"
-  },
-  "_moduleAliases": {
-    "@models": "./api/models",
-    "@services": "./services",
-    "@routes": "./api/routes/",
-    "@middlewares": "./api/middlewares",
-    "@controllers": "./api/controllers",
-    "@schemas": "./api/schemas"
   },
   "author": "Prateek Hegde",
   "license": "ISC",

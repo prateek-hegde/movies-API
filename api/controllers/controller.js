@@ -1,4 +1,4 @@
-const Movie = require("@models/movies_model");
+const Movie = require("../models/movies_model");
 
 
 //Add a Movie

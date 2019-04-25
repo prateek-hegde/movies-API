@@ -1,8 +1,8 @@
 'use strict';
-require('module-alias/register');
+
 require('dotenv').config();
 
-require('@services/database')
+require('./services/database')
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 //Routes
-const routes = require('@routes/router');
+const routes = require('./api/routes/router');
 app.use('/api/', routes);
 
 

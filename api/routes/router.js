@@ -1,10 +1,10 @@
 const express = require("express");
 var router = express();
 
-const movieController = require('@controllers/controller')
-const movieSchema = require('@schemas/movies_schema')
+const movieController = require('../controllers/controller')
+const movieSchema = require('../schemas/movies_schema')
 
-const bodyValidator = require('@middlewares/body_validator')
+const bodyValidator = require('../middlewares/body_validator')
 
 //Add Movie
 router.post('/add-movie',
