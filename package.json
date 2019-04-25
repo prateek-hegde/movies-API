@@ -8,7 +8,7 @@
     "postinstall": "link-module-alias"
   },
   "engines": {
-    "node": ">=8.0"
+    "node": "10.3.0"
   },
   "_moduleAliases": {
     "@models": "./api/models",
