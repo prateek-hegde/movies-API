@@ -7,6 +7,9 @@
     "start": "node app.js",
     "postinstall": "link-module-alias"
   },
+  "engines": {
+    "node": ">=8.0"
+  },
   "_moduleAliases": {
     "@models": "./api/models",
     "@services": "./services",
