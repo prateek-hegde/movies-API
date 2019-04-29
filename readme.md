@@ -3,7 +3,10 @@ Installation Steps:
     npm start
 
 Routes:
-    http://localhost:3000
+        Local
+            http://localhost:3000
+        Development
+            https://damp-badlands-51941.herokuapp.com
 
     GET routes
         /api/all-movies

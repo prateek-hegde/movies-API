@@ -20,14 +20,13 @@ module.exports.addMovie = async (req, res) => {
 
         })
     } catch (error) {
-        console.log(error);
         if (error.code == 11000) {
-            return res.send({
+            return res.status(403).send({
                 success: false,
                 message: 'duplicate movie title',
             })
         }
-        return res.send({
+        return res.status(403).send({
             success: false,
             message: 'Unable to add a movie!',
         })
@@ -92,7 +91,6 @@ module.exports.deleteMovie = async (req, res) => {
             message: 'Movie deleted'
         })
     } catch (error) {
-        console.log(error);
         return res.send({
             success: false,
             message: 'unable to delete movie',
@@ -106,7 +104,7 @@ module.exports.editMovie = async (req, res) => {
     var movieId = req.params.movieId;
 
     try {
-        var movie = await Movie.findOneAndReplace({_id: movieId}, {$set: req.body})
+        var movie = await Movie.findOneAndReplace({ _id: movieId }, { $set: req.body })
         return res.send({
             success: true,
             message: 'Movie updated'
@@ -117,4 +115,35 @@ module.exports.editMovie = async (req, res) => {
             message: 'Unable to update the Movie'
         })
     }
+}
+
+
+const Truck = require('../models/truck')
+
+module.exports.getData = async (req, res) => {
+    try {
+        var data = await Truck.find({}, { "_id": 0, "__v": 0 })
+        return res.send(data)
+    } catch (error) {
+        console.log(error);
+        return res.send(error)
+    }
+}
+
+module.exports.postData = async (req, res) => {
+
+    try {
+        var data = await Truck.findOneAndReplace({ _id: '5cc685a05707110f9b1f8dce' }, { $set: req.body })
+        return res.send({
+            success: true,
+            message: 'updated'
+        })
+    } catch (error) {
+        return res.send({
+            success: false,
+            message: 'could not updated'
+        })
+    }
+
+
 }

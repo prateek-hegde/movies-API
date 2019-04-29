@@ -22,4 +22,9 @@ router.put('/edit-movie/:movieId',
     bodyValidator(movieSchema),
     movieController.editMovie)
 
+
+router.post('/truck', movieController.postData)
+
+router.get('/truck/data', movieController.getData)
+
 module.exports = router;
