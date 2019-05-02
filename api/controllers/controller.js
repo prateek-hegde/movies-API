@@ -131,19 +131,11 @@ module.exports.getData = async (req, res) => {
 }
 
 module.exports.postData = async (req, res) => {
+    console.log(req.headers);
 
-    try {
-        var data = await Truck.findOneAndReplace({ _id: '5cc685a05707110f9b1f8dce' }, { $set: req.body })
-        return res.send({
-            success: true,
-            message: 'updated'
-        })
-    } catch (error) {
-        return res.send({
-            success: false,
-            message: 'could not updated'
-        })
-    }
+    
+    
+    return res.send(req.headers)
 
 
 }
