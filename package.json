@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js",
+    "start": "node app.js",
     "dev": "env-cmd ./config/dev.env nodemon app.js",
     "test": "env-cmd ./config/test.env jest --watch"
   },
@@ -19,11 +19,15 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.0",
     "helmet": "^3.15.0",
     "joi": "^14.3.1",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.9",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "mssql": "^5.1.0",
+    "pdfkit": "^0.9.1"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",

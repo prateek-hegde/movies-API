@@ -117,25 +117,3 @@ module.exports.editMovie = async (req, res) => {
     }
 }
 
-
-const Truck = require('../models/truck')
-
-module.exports.getData = async (req, res) => {
-    try {
-        var data = await Truck.find({}, { "_id": 0, "__v": 0 })
-        return res.send(data)
-    } catch (error) {
-        console.log(error);
-        return res.send(error)
-    }
-}
-
-module.exports.postData = async (req, res) => {
-    console.log(req.headers);
-
-    
-    
-    return res.send(req.headers)
-
-
-}

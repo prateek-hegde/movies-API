@@ -2,6 +2,7 @@ const express = require("express");
 var router = express();
 
 const movieController = require('../controllers/controller')
+const userController = require('../controllers/user_controller')
 const movieSchema = require('../schemas/movies_schema')
 
 const bodyValidator = require('../middlewares/body_validator')
@@ -22,9 +23,6 @@ router.put('/edit-movie/:movieId',
     bodyValidator(movieSchema),
     movieController.editMovie)
 
-
-router.post('/truck', movieController.postData)
-
-router.get('/truck/data', movieController.getData)
+router.get('/user/:vcn', userController.getPdf)
 
 module.exports = router;
